@@ -14,4 +14,6 @@ public class CodeDTO extends CommonDTO {
 
     private String codeId;
     private String codeNm;
+    private String codeVar;
+    private String codeExpl;
 }
