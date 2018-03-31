@@ -8,8 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan(basePackages = "io.kbdhunters.*.mapper")
 public class KbdHuntersWebApplication {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         SpringApplication.run(KbdHuntersWebApplication.class, args);
     }
-
 }

@@ -14,5 +14,6 @@ import java.util.List;
 @Mapper
 @Repository
 public interface CodeMapper {
+
     List<CodeDTO> getList(CodeConditionDTO codeConditionDTO);
 }

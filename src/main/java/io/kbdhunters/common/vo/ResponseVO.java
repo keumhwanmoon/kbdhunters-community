@@ -1,6 +1,5 @@
 package io.kbdhunters.common.vo;
 
-import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
@@ -9,9 +8,9 @@ import java.util.List;
  * @author Jason, Moon
  * @since 2018-03-31.
  */
-@Getter
 @Setter
 public class ResponseVO {
+
     public ResultCode resultCode;
     public List resultList;
     public Object resultObject;

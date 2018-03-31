@@ -11,5 +11,4 @@ public class IndexController {
     public ModelAndView getPage() {
         return new ModelAndView("/index");
     }
-
 }

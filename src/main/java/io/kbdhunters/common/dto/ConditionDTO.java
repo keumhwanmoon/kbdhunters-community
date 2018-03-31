@@ -8,6 +8,7 @@ import lombok.Data;
  */
 @Data
 public class ConditionDTO {
+
     private String currentUserId;
     private String currentUserIp;
 }

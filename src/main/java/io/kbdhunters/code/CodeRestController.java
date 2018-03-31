@@ -2,8 +2,8 @@ package io.kbdhunters.code;
 
 import io.kbdhunters.code.dto.CodeConditionDTO;
 import io.kbdhunters.code.service.CodeService;
-import io.kbdhunters.common.vo.ResultCode;
 import io.kbdhunters.common.vo.ResponseVO;
+import io.kbdhunters.common.vo.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class CodeRestController {
+
     private final CodeService codeService;
 
     @Autowired

@@ -8,6 +8,7 @@ import lombok.Data;
  */
 @Data
 public class CommonDTO {
+
     private String currentUserId;
     private String currentUserIp;
 }
