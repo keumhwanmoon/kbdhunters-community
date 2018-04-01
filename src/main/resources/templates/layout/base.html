@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+
+        <link rel="shortcut icon" href="/images/favicon.ico">
+
+        <title>Minton - Responsive Admin Dashboard Template</title>
+
+        <link href="/plugins/switchery/switchery.min.css" rel="stylesheet" />
+        <link href="/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+        <script src="/js/modernizr.min.js"></script>
+
+    </head>
+
+    <body class="fixed-left">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div layout:replace="layout/topbar :: topbar"></div>
+            <!-- Top Bar End -->
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div layout:replace="layout/left-sidebar :: left-sidebar"></div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <div layout:fragment="content"></div>
+                <div layout:replace="layout/footer :: footer"></div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+            <!-- Right Sidebar -->
+            <div layout:replace="layout/right-sidebar :: right-sidebar"></div>
+            <!-- /Right-bar -->
+
+        </div>
+        <!-- END wrapper -->
+
+
+        <div layout:replace="layout/include-script :: script"></div>
+
+
+        <script layout:fragment="script"></script>
+
+    </body>
+</html>
