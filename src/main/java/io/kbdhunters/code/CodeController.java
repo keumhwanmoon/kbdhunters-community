@@ -11,8 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CodeController {
 
-    @GetMapping("/code")
+    @GetMapping("/code/codeManage")
     public ModelAndView getPage() {
-        return new ModelAndView("/code");
+        return new ModelAndView("/code/codeManage");
     }
 }
