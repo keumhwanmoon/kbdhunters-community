@@ -22,14 +22,10 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-6">
-                <div class="card-box">
+            <div class="col-lg-12">
+                <div id="divTree" class="card-box">
                     코드 트리.
                 </div>
-
-            </div>
-            <div class="col-lg-6">
-
             </div>
         </div>
 
@@ -37,32 +33,30 @@
     <!-- end content -->
 
     <script layout:fragment="script">
-    jQuery(document).ready(function($) {
-        $('.counter').counterUp({
-            delay: 100,
-            time: 1200
+        $(document).ready(function () {
+
+            Page.init();
         });
-        $('.circliful-chart').circliful();
-    });
 
-    // BEGIN SVG WEATHER ICON
-    if (typeof Skycons !== 'undefined'){
-        var icons = new Skycons(
-            {"color": "#3bafda"},
-            {"resizeClear": true}
-            ),
-            list  = [
-                "clear-day", "clear-night", "partly-cloudy-day",
-                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-                "fog"
-            ],
-            i;
+        var Page = {
+            init: function () {
+                TreeScope.init();
+            }
+        };
 
-        for(i = list.length; i--; )
-            icons.set(list[i], list[i]);
-        icons.play();
-    };
+        var TreeScope = {
+            target: $("#divTree"),
 
+            init: function () {
+                var _this = this; // _codeTreeScope
+
+                treeUtils.init(_this.target, "/api/code/getTree", {
+                    param: { lazy: false },
+                    click: function (e, clickedNode) {
+                    }
+                });
+            }
+        };
     </script>
 
 </body>

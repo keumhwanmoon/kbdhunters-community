@@ -12,6 +12,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class CodeConditionDTO extends ConditionDTO {
 
+    private String conParCodeId;
     private String conCodeId;
     private String conCodeNm;
 }
