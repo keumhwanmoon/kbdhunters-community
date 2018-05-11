@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>kbdhunters-community</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>KBDHutners Community</name>
     <description>KBDHutners Community</description>
     <url>https://www.kbdhunters.io</url>
@@ -104,5 +104,6 @@
                 </includes>
             </resource>
         </resources>
+        <finalName>ROOT</finalName>
     </build>
 </project>
