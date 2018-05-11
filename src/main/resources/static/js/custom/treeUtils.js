@@ -29,7 +29,6 @@
                 source: { url: url },
                 cache: false,
                 postProcess: function (event, data) {
-                    console.log(data);
                     data.result = _this.convertData(data);
                 },
 
