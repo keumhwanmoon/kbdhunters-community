@@ -16,4 +16,8 @@ public class CodeDTO extends CommonDTO {
     private String codeNm;
     private String codeVar;
     private String codeExpl;
+
+    private String nodeKey;
+    private String title;
+    private String parentNodeKey;
 }

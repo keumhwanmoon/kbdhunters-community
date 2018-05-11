@@ -26,9 +26,10 @@
             if (config.param) url = url + "?" + $.param(config.param);
 
             var defaultConfig = {
-                source: {url: url},
+                source: { url: url },
                 cache: false,
                 postProcess: function (event, data) {
+                    console.log(data);
                     data.result = _this.convertData(data);
                 },
 
@@ -81,7 +82,7 @@
 
                 map[parent].children.push(obj);
             }
-
+console.log(map['ROOT'].children);
             return map['ROOT'].children;
         }
     };
