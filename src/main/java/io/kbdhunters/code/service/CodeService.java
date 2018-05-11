@@ -10,5 +10,5 @@ import java.util.List;
  * @since 2018-03-31.
  */
 public interface CodeService {
-    List<CodeDTO> getList(CodeConditionDTO conditionDTO);
+    List<CodeDTO> getTreeList(CodeConditionDTO conditionDTO);
 }

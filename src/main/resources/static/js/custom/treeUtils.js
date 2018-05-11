@@ -82,7 +82,7 @@
 
                 map[parent].children.push(obj);
             }
-console.log(map['ROOT'].children);
+
             return map['ROOT'].children;
         }
     };

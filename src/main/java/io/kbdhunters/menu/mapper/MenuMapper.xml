@@ -1,0 +1,24 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.kbdhunters.menu.mapper.MenuMapper">
+    <select id="getTreeList" parameterType="menuConditionDTO" resultType="treeDTO">
+        /* SQLMapId (MenuMapper.getTreeList) */
+        SELECT  A1.MENU_ID
+        ,       A1.MENU_NM
+        ,       A1.MENU_EXPL
+        ,       A1.SORT_NO
+        ,       CASE WHEN (SELECT COUNT(1) FROM TB_MENU AA WHERE AA.PAR_MENU_ID = A1.MENU_ID) > 0 THEN 'true' ELSE 'false' END
+                                AS  HAS_CHILD
+        ,       A1.MENU_ID      AS NODE_KEY
+        ,       A1.MENU_NM      AS TITLE
+        ,       A1.PAR_MENU_ID  AS PARENT_NODE_KEY
+        FROM    TB_MENU         A1
+        <where>
+            <if test="conParMenuId != null and conParMenuId != ''">
+                A1.PAR_CODE_ID  = #{conParMenuId}
+            </if>
+        </where>
+        ORDER BY
+                A1.SORT_NO
+    </select>
+</mapper>

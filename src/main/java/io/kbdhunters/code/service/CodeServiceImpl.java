@@ -22,7 +22,7 @@ public class CodeServiceImpl implements CodeService {
     }
 
     @Override
-    public List<CodeDTO> getList(CodeConditionDTO codeConditionDTO) {
-        return codeMapper.getList(codeConditionDTO);
+    public List<CodeDTO> getTreeList(CodeConditionDTO codeConditionDTO) {
+        return codeMapper.getTreeList(codeConditionDTO);
     }
 }

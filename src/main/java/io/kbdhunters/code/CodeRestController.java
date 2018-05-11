@@ -23,7 +23,7 @@ public class CodeRestController {
     }
 
     @GetMapping("/api/code/getTree")
-    public ResponseVO getCodeList(CodeConditionDTO codeConditionDTO) {
-        return ResponseVO.of(ResultCode.SUCCESS, codeService.getList(codeConditionDTO));
+    public ResponseVO getTreeList(CodeConditionDTO codeConditionDTO) {
+        return ResponseVO.of(ResultCode.SUCCESS, codeService.getTreeList(codeConditionDTO));
     }
 }

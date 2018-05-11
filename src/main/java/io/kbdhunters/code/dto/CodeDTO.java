@@ -1,6 +1,6 @@
 package io.kbdhunters.code.dto;
 
-import io.kbdhunters.common.dto.CommonDTO;
+import io.kbdhunters.common.dto.TreeDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -10,14 +10,10 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class CodeDTO extends CommonDTO {
+public class CodeDTO extends TreeDTO {
 
     private String codeId;
     private String codeNm;
     private String codeVar;
     private String codeExpl;
-
-    private String nodeKey;
-    private String title;
-    private String parentNodeKey;
 }

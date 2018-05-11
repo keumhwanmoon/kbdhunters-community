@@ -1,8 +1,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="io.kbdhunters.code.mapper.CodeMapper">
-    <select id="getList" parameterType="codeConditionDTO" resultType="codeDTO">
-        /* SQLMapId (CodeSQL.getList) */
+    <select id="getTreeList" parameterType="codeConditionDTO" resultType="codeDTO">
+        /* SQLMapId (CodeMapper.getTreeList) */
         SELECT  A1.CODE_ID
         ,       A1.CODE_NM
         ,       A1.CODE_EXPL
