@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/base">
+
+<body>
+
+    <!-- Start content -->
+    <div class="content" layout:fragment="content">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-title-box">
+                    <h4 class="page-title">게시판</h4>
+                    <ol class="breadcrumb float-right">
+                        <li class="breadcrumb-item"><a href="#">KBDHunters</a></li>
+                        <li class="breadcrumb-item"><a href="#">시스템 설정</a></li>
+                        <li class="breadcrumb-item active">게시판 관리</li>
+                    </ol>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card-box">
+                    <h4 class="m-t-0 header-title">게시판</h4>
+
+                    <table class="table">
+                        <colgroup>
+                            <col width="75px;"/>
+                            <col width="125px;"/>
+                            <col width="*"/>
+                            <col width="125px;"/>
+                            <col width="125px;"/>
+                            <col width="125px;"/>
+                            <col width="125px;"/>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>카테고리</th>
+                            <th class="text-center">제목</th>
+                            <th>글쓴이</th>
+                            <th>등록일시</th>
+                            <th>조회</th>
+                            <th>추천</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Jacob</td>
+                            <td>Jacob</td>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>Larry</td>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td>@twitter</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- end content -->
+
+    <script layout:fragment="script">
+        $(document).ready(function () {
+
+            Page.init();
+        });
+
+        var Page = {
+            init: function () {
+                TreeScope.init();
+            }
+        };
+
+        var TreeScope = {
+            target: $("#divCodeTree"),
+
+            init: function () {
+                var _this = this; // _codeTreeScope
+
+                treeUtils.init(_this.target, "/api/code/getTree", {
+                    param: { lazy: false },
+                    click: function (e, clickedNode) {
+                    }
+                });
+            }
+        };
+    </script>
+
+</body>
+</html>
