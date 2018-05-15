@@ -12,7 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class BoardController {
 
     @GetMapping("/board/boardList")
-    public ModelAndView getPage() {
+    public ModelAndView getListPage() {
         return new ModelAndView("/board/boardList");
+    }
+
+    @GetMapping("/board/boardRegister")
+    public ModelAndView getRegisterPage() {
+        return new ModelAndView("/board/boardRegister");
     }
 }

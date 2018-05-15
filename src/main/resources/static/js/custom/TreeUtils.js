@@ -7,14 +7,14 @@
  * @see http://wwwendt.de/tech/fancytree/demo/
  */
 
-(function () { if (null == window["jQuery"] || null != window["_treeUtils"]) return;
+(function () { if (null == window["jQuery"] || null != window["TreeUtils"]) return;
 
-    var result = {
+    window.TreeUtils = {
 
         init: function (target, url, config) {
 
-            var _this = this;
-            
+            let _this = this;
+
             try {
                 _this.getTree(target);
 
@@ -25,8 +25,8 @@
 
             if (config.param) url = url + "?" + $.param(config.param);
 
-            var defaultConfig = {
-                source: { url: url },
+            let defaultConfig = {
+                source: {url: url},
                 cache: false,
                 postProcess: function (event, data) {
                     data.result = _this.convertData(data);
@@ -47,7 +47,7 @@
         },
 
         expandAll: function (target) {
-            target.fancytree("getTree").visit(function(node){
+            target.fancytree("getTree").visit(function (node) {
                 node.setExpanded();
             });
         },
@@ -58,21 +58,21 @@
 
         convertData: function (data) {
 
-            var array = data.response.resultList; // 서버에서 ResponseVO가 리턴되므로, 목록을 꺼낸다.
+            let array = data.response.resultList; // 서버에서 ResponseVO가 리턴되므로, 목록을 꺼낸다.
 
-            var map = {};
+            let map = {};
 
-            for(var i = 0; i < array.length; i++){
+            for (let i = 0; i < array.length; i++) {
 
-                var obj = array[i];
+                let obj = array[i];
 
-                obj.children= [];
+                obj.children = [];
 
                 map[obj.nodeKey] = obj;
 
-                var parent = obj.parentNodeKey; // 최상단은 parentKey가 'ROOT'로 설정하도록 한다.
+                let parent = obj.parentNodeKey; // 최상단은 parentKey가 'ROOT'로 설정하도록 한다.
 
-                if(!map[parent]){
+                if (!map[parent]) {
 
                     map[parent] = {
                         children: []
@@ -85,6 +85,4 @@
             return map['ROOT'].children;
         }
     };
-
-    window.treeUtils = result;
 })();

@@ -92,22 +92,23 @@
         });
 
         var Page = {
+
             init: function () {
-                TreeScope.init();
+
             }
         };
 
-        var TreeScope = {
-            target: $("#divCodeTree"),
+        var BoardScope = {
 
             init: function () {
-                var _this = this; // _codeTreeScope
 
-                treeUtils.init(_this.target, "/api/code/getTree", {
-                    param: { lazy: false },
-                    click: function (e, clickedNode) {
-                    }
-                });
+            },
+
+            method: {
+
+                search: function () {
+
+                }
             }
         };
     </script>
