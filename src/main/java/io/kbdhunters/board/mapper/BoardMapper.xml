@@ -1,0 +1,25 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.kbdhunters.board.mapper.BoardMapper">
+    <select id="getBoardList" parameterType="boardConditionDTO" resultType="boardPostDTO">
+        /* SQLMapId (BoardMapper.getBoardList) */
+        SELECT  A1.SUBJECT          AS SUBJECT
+        ,       A1.CATGRY_ID        AS CATEGORY_ID
+        ,       B1.CATGRY_NAME      AS CATEGORY_NAME
+        ,       A1.HIT_COUNT
+        ,       A1.RECMMD_COUNT     AS RECOMMEND_COUNT
+        ,       A1.REGT_DATE        AS REGISTER_DATE
+        ,       A1.REGT_USER_ID     AS REGISTER_USER_ID
+        FROM    TB_BOARD_POST       A1
+        INNER JOIN
+                TB_BOARD_CTGRY      B1
+                ON  B1.CATGRY_ID    = A1.CATGRY_ID
+        <where>
+            <if test="conBoardId != null and conBoardId != ''">
+                A1.BOARD_ID         = #{conBoardId}
+            </if>
+        </where>
+        ORDER BY
+                A1.REGT_DATE DESC
+    </select>
+</mapper>
