@@ -22,7 +22,11 @@ public class BoardService {
         this.boardMapper = boardMapper;
     }
 
-    public List<BoardPostDTO> getBoardList(BoardConditionDTO conditionDTO) {
+    public List<BoardPostDTO> getList(BoardConditionDTO conditionDTO) {
         return boardMapper.getBoardList(conditionDTO);
+    }
+
+    public int register(BoardPostDTO boardPostDTO) {
+        return boardMapper.insert(boardPostDTO);
     }
 }

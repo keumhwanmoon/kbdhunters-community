@@ -1,7 +1,7 @@
 package io.kbdhunters.board.mapper;
 
+import io.kbdhunters.board.dto.BoardCategoryDTO;
 import io.kbdhunters.board.dto.BoardConditionDTO;
-import io.kbdhunters.board.dto.BoardPostDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -9,13 +9,10 @@ import java.util.List;
 
 /**
  * @author Jason, Moon
- * @since 2018-05-17.
+ * @since 2018-05-22.
  */
 @Mapper
 @Repository
-public interface BoardMapper {
-
-    List<BoardPostDTO> getBoardList(BoardConditionDTO conditionDTO);
-
-    int insert(BoardPostDTO boardPostDTO);
+public interface BoardCategoryMapper {
+    List<BoardCategoryDTO> getList(BoardConditionDTO conditionDTO);
 }

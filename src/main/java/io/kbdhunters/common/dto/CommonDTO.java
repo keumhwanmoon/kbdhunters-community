@@ -11,6 +11,8 @@ import java.time.LocalDateTime;
 @Data
 public class CommonDTO {
 
+    private String registerUserNickName;
+
     private String registerUserId;
     private String registerUserIp;
     private LocalDateTime registerDate;

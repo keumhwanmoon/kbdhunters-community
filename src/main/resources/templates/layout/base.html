@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <head>
         <meta charset="utf-8">
@@ -11,6 +12,7 @@
 
         <title>Minton - Responsive Admin Dashboard Template</title>
 
+        <th:block layout:fragment="additional-css"></th:block>
         <th:block layout:replace="layout/include-css"></th:block>
 
     </head>
@@ -49,6 +51,7 @@
 
         <div layout:replace="layout/include-script :: script"></div>
 
+        <th:block layout:fragment="additional-script"/>
 
         <script layout:fragment="script"></script>
 

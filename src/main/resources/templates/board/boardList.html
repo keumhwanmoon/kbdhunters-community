@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layout/base"
->
+      layout:decorator="layout/base">
 
 <body>
 
@@ -30,7 +29,6 @@
 
                     <table class="table">
                         <colgroup>
-                            <col width="75px;"/>
                             <col width="125px;"/>
                             <col width="*"/>
                             <col width="125px;"/>
@@ -40,13 +38,12 @@
                         </colgroup>
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>카테고리</th>
+                            <th class="text-center">카테고리</th>
                             <th class="text-center">제목</th>
-                            <th>글쓴이</th>
-                            <th>등록일시</th>
-                            <th>조회</th>
-                            <th>추천</th>
+                            <th class="text-center">글쓴이</th>
+                            <th class="text-center">등록일시</th>
+                            <th class="text-center">조회</th>
+                            <th class="text-center">추천</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -54,13 +51,12 @@
                             <td colspan="7" class="text-center">데이터가 존재하지 않습니다.</td>
                         </tr>
                         <tr th:if="${boardList.size() ne 0}" th:each="post : ${boardList}">
-                            <th scope="row">3</th>
-                            <td th:text="${post.categoryName}"></td>
+                            <!--<td class="text-center" th:text="${post.categoryName}"></td>-->
                             <td th:text="${post.subject}"></td>
-                            <td th:text="${post.registerUserNickName}"></td>
-                            <td th:text="${post.registerDate}"></td>
-                            <td th:text="${post.hitCount}"></td>
-                            <td th:text="${post.recommendCount}"></td>
+                            <td class="text-center" th:text="${post.registerUserNickName}"></td>
+                            <td class="text-center" th:text="${#temporals.format(post.registerDate, 'yyyy-MM-dd')}"></td>
+                            <td class="text-center" th:text="${post.hitCount}"></td>
+                            <td class="text-center" th:text="${post.recommendCount}"></td>
                         </tr>
                         </tbody>
                     </table>
@@ -96,7 +92,7 @@
                 let _this = this;
 
                 _this.button.register.on("click", function () {
-                    location.href = "/board/boardRegister";
+                    location.href = "/board/boardRegister?conBoardId=B001";
                 });
             },
 

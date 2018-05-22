@@ -1,0 +1,13 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.kbdhunters.board.mapper.BoardCategoryMapper">
+    <select id="getList" parameterType="boardConditionDTO" resultType="boardCategoryDTO">
+        /* SQLMapId (BoardCategoryMapper.getList) */
+        SELECT  A1.CATGRY_ID    AS CATEGORY_ID
+        ,       A1.CATGRY_NAME  AS CATEGORY_NAME
+        FROM    TB_BOARD_CTGRY  A1
+        WHERE   A1.BOARD_ID     = #{conBoardId}
+        ORDER BY
+                A1.ORDER_NO     ASC
+    </select>
+</mapper>

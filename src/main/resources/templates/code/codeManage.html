@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="layout/base">
 
 <body>
+
+<th:block layout:fragment="additional-css">
+    <link href="/plugins/fancytree/ui.fancytree.min.css" rel="stylesheet" type="text/css">
+</th:block>
 
     <!-- Start content -->
     <div class="content" layout:fragment="content">
@@ -36,6 +41,16 @@
 
     </div>
     <!-- end content -->
+
+    <th:block layout:fragment="additional-script">
+        <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+        <!-- fancytree -->
+        <script src="/js/jquery.fancytree.js"></script>
+
+        <!-- custom -->
+        <script src="/js/custom/treeUtils.js"></script>
+    </th:block>
 
     <script layout:fragment="script">
         $(document).ready(function () {

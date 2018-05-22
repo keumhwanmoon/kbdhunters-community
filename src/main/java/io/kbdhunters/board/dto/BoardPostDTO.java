@@ -12,9 +12,12 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class BoardPostDTO extends CommonDTO {
 
+    private String boardId;
+
     private String subject;
     private String categoryId;
     private String categoryName;
+    private String contents;
     private int hitCount;
     private int recommendCount;
 }

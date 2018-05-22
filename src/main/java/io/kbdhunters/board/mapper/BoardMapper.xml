@@ -10,10 +10,14 @@
         ,       A1.RECMMD_COUNT     AS RECOMMEND_COUNT
         ,       A1.REGT_DATE        AS REGISTER_DATE
         ,       A1.REGT_USER_ID     AS REGISTER_USER_ID
+        ,       C1.NICK_NAME        AS REGISTER_USER_NICK_NAME
         FROM    TB_BOARD_POST       A1
         INNER JOIN
                 TB_BOARD_CTGRY      B1
                 ON  B1.CATGRY_ID    = A1.CATGRY_ID
+        INNER JOIN
+                TB_USER             C1
+                ON  C1.USER_ID      = A1.REGT_USER_ID
         <where>
             <if test="conBoardId != null and conBoardId != ''">
                 A1.BOARD_ID         = #{conBoardId}
@@ -22,4 +26,29 @@
         ORDER BY
                 A1.REGT_DATE DESC
     </select>
+
+    <insert id="insert" parameterType="boardPostDTO">
+        INSERT INTO TB_BOARD_POST (
+                SEQ
+        ,       BOARD_ID
+        ,       POST_SEQ
+        ,       CATGRY_ID
+        ,       SUBJECT
+        ,       CONTENTS
+        ,       REGT_USER_ID
+        ,       REGT_USER_IP
+        ,       REGT_DATE
+        ) SELECT
+               ( SELECT IFNULL(MAX(SEQ), 0) + 1 FROM TB_BOARD_POST )
+        ,       #{boardId}
+        ,       IFNULL(MAX(POST_SEQ), 0) + 1
+        ,       #{categoryId}
+        ,       #{subject}
+        ,       #{contents}
+        ,       #{registerUserId}
+        ,       #{registerUserIp}
+        ,       NOW()
+        FROM    TB_BOARD_POST
+        WHERE   BOARD_ID = #{boardId}
+    </insert>
 </mapper>
